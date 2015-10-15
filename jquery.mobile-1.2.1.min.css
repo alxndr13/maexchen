@@ -1417,8 +1417,10 @@ div.ui-mobile-viewport {
 
 .ui-header,
 .ui-footer {
-    position: relative;
-    zoom: 1
+    position: absolute;
+    bottom: 0;
+    zoom: 1;
+    width: 100%;
 }
 
 .ui-mobile .ui-header,

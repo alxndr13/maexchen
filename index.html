@@ -29,7 +29,7 @@
             <p><a href="#two" data-role="button" data-theme="e">Start</a></p>
             <p><a href="#regeln" data-role="button" data-rel="dialog" data-transition="pop">Regeln</a></p>
         </div>
-        <!-- /content -->   
+        <!-- /content -->
 
         <div data-role="footer" data-theme="a">
             <h4>&copy; Macsi - 2015</h4>
@@ -51,14 +51,15 @@
             <h2>Modus auswählen:</h2>
             <p>Wählt euren Modus! Seid ihr hart genug um es mit dem Captain aufzunehmen?</p>
             <p align="center">
-                <label for="modusauswahl" class="select" align="center">Schwierigkeit: </label></p>
-                <select name="select-choice-1" id="select-choice-1">
-                    <option value="leicht">leicht</option>
-                    <option value="hart">hart</option>
-                </select>
-            
+                <label for="modusauswahl" class="select" align="center">Schwierigkeit: </label>
+            </p>
+            <select name="select-choice-1" id="select-choice-1">
+                <option value="leicht">leicht</option>
+                <option value="hart">hart</option>
+            </select>
+
             <p><a href="#four" data-role="button" data-transition="pop" data-theme="b">Mitspieler eintragen</a></p>
-            <p><a href="#one" data-direction="reverse" data-role="button" >Zurück</a></p>
+            <p><a href="#one" data-direction="reverse" data-role="button">Zurück</a></p>
 
         </div>
         <!-- /content -->
@@ -110,8 +111,49 @@
                 <input type="text" id="playerfive"></input>
             </form>
 
-            <p><a href="#five" data-role="button" data-transition="pop" data-theme="b">Spiel starten!</a></p>
+            <p><a href="#sp1" data-role="button" data-transition="pop" data-theme="b">Spiel starten!</a></p>
             <p><a href="#two" data-direction="reverse" data-role="button">Zurück</a></p>
+
+        </div>
+        <!-- /content -->
+
+        <div data-role="footer">
+            <h4>&copy; Macsi - 2015</h4>
+            <!---->
+        </div>
+        <!-- /footer -->
+    </div>
+    <div data-role="page" id="sp1" align="center" data-theme="a">
+
+        <div data-role="header">
+            <h1>Maexchen</h1>
+        </div>
+        <!-- /header -->
+        <div data-role="content">
+            <h1 id="sp1header">Spieler, du bist am Zug.</h1>
+            <img src="arschficker.gif" height=200 width=200/>
+            <p><a href="#sp2" data-role="button" data-transition="pop" data-theme="b" data-rel="dialog">Würfeln!</a></p>
+
+
+        </div>
+        <!-- /content -->
+
+        <div data-role="footer">
+            <h4>&copy; Macsi - 2015</h4>
+            <!---->
+        </div>
+        <!-- /footer -->
+    </div>
+    <div data-role="page" id="sp2" align="center" data-theme="a">
+
+        <div data-role="header">
+            <h1>Maexchen</h1>
+        </div>
+        <!-- /header -->
+        <div data-role="content">
+            <h2>Deine gewürfelte Zahl:</h2>
+            <p>42</p>
+            <p><a href="#sp1" data-rel="back" data-role="button" data-inline="true" data-icon="back">Zudecken</a></p>
 
         </div>
         <!-- /content -->
