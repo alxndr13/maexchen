@@ -7,3 +7,15 @@ function wuerfeln() {
     gewZahl = zahlen[Math.floor(Math.random() * zahlen.length)];
     document.getElementById("gewuerfelteZahl").innerHTML = gewZahl;
 }
+
+function checkIfZahlEingegeben() {
+    if (document.getElementById("eingebZahl") != "") {
+
+        document.getElementById("dd").removeAttribute("class");
+    }
+
+}
+
+function wahrheit() {
+
+}
