@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="jquery.mobile-1.2.1.min.css" />
     <script src="jquery-1.8.3.min.js"></script>
     <script src="jquery.mobile-1.2.1.min.js"></script>
+    <script src="script.js"></script>
 </head>
 
 
@@ -132,7 +133,7 @@
         <div data-role="content">
             <h1 id="sp1header">Spieler, du bist am Zug.</h1>
             <img src="arschficker.gif" height=200 width=200/>
-            <p><a href="#wuerfel" data-role="button" data-transition="pop" data-theme="b" data-rel="dialog">Würfeln!</a></p>
+            <p><a href="#wuerfel" data-role="button" data-transition="pop" data-theme="b" data-rel="dialog" onclick="wuerfeln()">Würfeln!</a></p>
             <p><a href="#sp2    " data-role="button" data-transition="pop" data-theme="c" data-rel="dialog">Weitergeben</a></p>
 
 
@@ -153,7 +154,7 @@
         <!-- /header -->
         <div data-role="content">
             <h2>Deine gewürfelte Zahl:</h2>
-            <p>42</p>
+            <p id="gewuerfelteZahl"></p>
             <p><a href="#sp1" data-rel="back" data-role="button" data-inline="true" data-icon="back">Zudecken</a></p>
 
         </div>
@@ -164,21 +165,22 @@
     </div>
 
 
-    <div data-role="page" id="sp2">
-        <!--        Wahrheit-->
-        <div id="wrapper">
-            <div style="height: 40%; position: absolute;">
-                Wahrheit
+    <div data-role="page" id="sp2" data-theme="a" align="center">
+        <div data-role="content">
+            <!--        Wahrheit-->
+            <div id="oben">
+                <p><a href="#wahrheit" data-role="button" data-transition="pop" data-theme="b" data-rel="dialog">Wahrheit</a></p>
             </div>
             <!--        Lüge -->
-            <div style="height: 40%; position: absolute;">
-                Lüge
+            <div id="unten">
+                <p><a href="#luege" data-role="button" data-transition="pop" data-theme="c" data-rel="dialog">Lüge</a></p>
             </div>
         </div>
         <div data-role="footer">
             <h4>&copy; Macsi - 2015</h4>
             <!---->
         </div>
+
         <!-- /footer -->
     </div>
 
