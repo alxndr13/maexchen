@@ -111,7 +111,7 @@
                 <input type="text" id="playerfive"></input>
             </form>
 
-            <p><a href="#sp1" data-role="button" data-transition="pop" data-theme="b">Spiel starten!</a></p>//button
+            <p><a href="#sp1" data-role="button" data-transition="pop" data-theme="b">Spiel starten!</a></p>
             <p><a href="#two" data-direction="reverse" data-role="button">Zurück</a></p>
 
         </div>
@@ -123,7 +123,7 @@
         </div>
         <!-- /footer -->
     </div>
-    <div data-role="page" id="sp1" align="center" data-theme="a"> //hier beginnt die Spielrunde
+    <div data-role="page" id="sp1" align="center" data-theme="a">
 
         <div data-role="header">
             <h1>Maexchen</h1>
@@ -132,7 +132,8 @@
         <div data-role="content">
             <h1 id="sp1header">Spieler, du bist am Zug.</h1>
             <img src="arschficker.gif" height=200 width=200/>
-            <p><a href="#sp2" data-role="button" data-transition="pop" data-theme="b" data-rel="dialog">Würfeln!</a></p>
+            <p><a href="#wuerfel" data-role="button" data-transition="pop" data-theme="b" data-rel="dialog">Würfeln!</a></p>
+            <p><a href="#sp2    " data-role="button" data-transition="pop" data-theme="c" data-rel="dialog">Weitergeben</a></p>
 
 
         </div>
@@ -144,7 +145,7 @@
         </div>
         <!-- /footer -->
     </div>
-    <div data-role="page" id="sp2" align="center" data-theme="a">
+    <div data-role="page" id="wuerfel" align="center" data-theme="a">
 
         <div data-role="header">
             <h1>Maexchen</h1>
@@ -156,8 +157,24 @@
             <p><a href="#sp1" data-rel="back" data-role="button" data-inline="true" data-icon="back">Zudecken</a></p>
 
         </div>
-        <!-- /content -->
+        <div data-role="footer">
+            <h4>&copy; Macsi - 2015</h4>
+            <!---->
+        </div>
+    </div>
 
+
+    <div data-role="page" id="sp2">
+        <!--        Wahrheit-->
+        <div id="wrapper">
+            <div style="height: 40%; position: absolute;">
+                Wahrheit
+            </div>
+            <!--        Lüge -->
+            <div style="height: 40%; position: absolute;">
+                Lüge
+            </div>
+        </div>
         <div data-role="footer">
             <h4>&copy; Macsi - 2015</h4>
             <!---->
