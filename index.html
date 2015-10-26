@@ -9,6 +9,31 @@
     <script src="jquery-1.8.3.min.js"></script>
     <script src="jquery.mobile-1.2.1.min.js"></script>
     <script src="script.js"></script>
+    <style>
+        div.wrapper {
+            position: fixed !important;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+        
+        div.top {
+            background-color: black;
+        }
+        
+        div.bottom {
+            background-color: white;
+        }
+        
+        div.top,
+        div.bottom {
+            height: 50%;
+            position: relative;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+    </style>
 </head>
 
 
@@ -168,20 +193,25 @@
 
 
     <div data-role="page " id="sp2 " data-theme="a " align="center ">
-        <div data-role="content ">
+        <div class="wrapper">
+            <div class="top" style="text-align: center; font-size:4em; color:white;"><br><br>Lüge</div>
+            <div class="bottom" style="text-align: center; font-size:4em;"><br><br>Wahrheit</div>
+        </div>
+
+        <!--<div data-role="content ">
             <!--        Wahrheit-->
-            <div id="oben ">
+            <!--<div id="oben ">
                 <p><a href="#wahrheit " data-role="button " data-transition="pop " data-theme="b " data-rel="dialog ">Wahrheit</a></p>
             </div>
             <!--        Lüge -->
-            <div id="unten ">
+            <!--<div id="unten ">
                 <p><a href="#luege " data-role="button " data-transition="pop " data-theme="c " data-rel="dialog ">Lüge</a></p>
             </div>
         </div>
         <div data-role="footer ">
             <h4>&copy; Macsi - 2015</h4>
             <!---->
-        </div>
+        <!--</div>
 
         <!-- /footer -->
     </div>
