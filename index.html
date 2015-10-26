@@ -79,12 +79,12 @@
             <p align="center">
                 <label for="modusauswahl" class="select" align="center">Schwierigkeit: </label>
             </p>
-            <select name="select-choice-1" id="select-choice-1">
+            <select name="select-choice-1" id="difficulty">
                 <option value="leicht">leicht</option>
                 <option value="hart">hart</option>
             </select>
 
-            <p><a href="#four" data-role="button" data-transition="pop" data-theme="b">Mitspieler eintragen</a></p>
+            <p><a href="#four" data-role="button" data-transition="pop" data-theme="b" onclick="saveDiff();">Mitspieler eintragen</a></p>
             <p><a href="#one" data-direction="reverse" data-role="button">Zurück</a></p>
 
         </div>
@@ -130,14 +130,14 @@
             <h2>Trage die Spieler ein</h2>
             <p>Trage die Spieler ein, die an Mäxchen teilnehmen:</p>
             <form>
-                <input type="text" id="playerone"></input>
-                <input type="text" id="playertwo"></input>
-                <input type="text" id="playerthree"></input>
-                <input type="text" id="playerfour"></input>
-                <input type="text" id="playerfive"></input>
+                <input type="text" id="player1"></input>
+                <input type="text" id="player2"></input>
+                <input type="text" id="player3"></input>
+                <input type="text" id="player4"></input>
+                <input type="text" id="player5"></input>
             </form>
 
-            <p><a href="#sp1" data-role="button" data-transition="pop" data-theme="b">Spiel starten!</a></p>
+            <p><a href="#sp1" data-role="button" data-transition="pop" data-theme="b" onclick="savePlayers(); loadCurrentPlayer();">Spiel starten!</a></p>
             <p><a href="#two" data-direction="reverse" data-role="button">Zurück</a></p>
 
         </div>
@@ -156,12 +156,12 @@
         </div>
         <!-- /header -->
         <div data-role="content">
-            <h1 id="sp1header">Spieler, du bist am Zug.</h1>
+            <h1 id="spheader">Spieler, du bist am Zug.</h1>
             <img src="arschficker.gif" height=200 width=200/>
             <p>Deine "gewürfelte" Zahl:</p>
             <input id="eingebZahl" type="text">
             <p><a href="#wuerfel" data-role="button" data-transition="pop" data-theme="b" data-rel="dialog" onclick="wuerfeln()">Würfeln!</a></p>
-            <p><a href="#sp2" data-role="button" data-transition="pop" data-theme="c" data-rel="dialog" id="dd">Weitergeben</a></p>
+            <p><a href="#sp2" data-role="button" data-transition="pop" data-theme="c" data-rel="dialog" id="dd" onclick="saveEingebZahl();">Weitergeben</a></p>
 
 
         </div>
@@ -194,21 +194,45 @@
 
     <div data-role="page" id="sp2" data-theme="a" align="center">
         <div class="wrapper">
-            <div class="top" style="text-align: center; font-size:4em; color:white;" onclick="" ;>
-                <br>
-                <br>Lüge
-            </div>
-<<<<<<< HEAD
-            <div class="bottom" style="text-align: center; font-size:4em; color: black;" onclick="" ;>
-=======
-            <div class="bottom" style="text-align: center; font-size:4em;color:black;">
->>>>>>> faf496ca374ff3221f128807481c7fd94c26e45f
+            <div class="top" style="text-align: center; font-size:4em; color:white;" style="cursor: pointer;" onclick="wahrheit();">
                 <br>
                 <br>Wahrheit
+            </div>
+            <div class="bottom" style="text-align: center; font-size:4em; color: black;" style="cursor: pointer;" onclick="luege();">
+                <br>
+                <br>Lüge
             </div>
         </div>
     </div>
 
+    <div data-role="page" id="istluege" data-theme="a">
+        <div class="wrapper">
+            <div class="top" style="text-align: center; background-color: green; font-size:4em; color:white;" style="cursor: pointer;">
+                <br>
+                <br>Richtig :-)
+            </div>
+            <div data-role="content">
+                <p style="text-align: center; font-size: 2em;">Alles richtig gemacht Brudi!</p>
+                <p><a href="#sp1" data-role="button" data-transition="pop" data-theme="b" onclick="loadCurrentPlayer();">Weiter!</a></p>
+            </div>
+
+
+        </div>
+    </div>
+    <div data-role="page" id="keineluege" data-theme="a">
+        <div class="wrapper">
+            <div class="top" style="text-align: center; background-color: red; font-size:4em; color:white;" style="cursor: pointer;">
+                <br>
+                <br>Falsch :-(
+            </div>
+            <div data-role="content">
+                <p style="text-align: center; font-size: 2em;">Alles falsch gemacht Brudi!</p>
+                <p><a href="#sp1" data-role="button" data-transition="pop" data-theme="b" onclick="loadCurrentPlayer();">Weiter!</a></p>
+            </div>
+
+
+        </div>
+    </div>
 </body>
 
 </html>
