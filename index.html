@@ -159,56 +159,62 @@
             <h1 id="sp1header">Spieler, du bist am Zug.</h1>
             <img src="arschficker.gif" height=200 width=200/>
             <p>Deine "gewürfelte" Zahl:</p>
-            <input id="eingebZahl" type="text" onChange="checkIfZahlEingegeben()">
-            <p><a href=" #wuerfel" data-role="button" data-transition="pop" data-theme="b" data-rel="dialog" onclick="wuerfeln()">Würfeln!</a></p>
-            <p><a href="#sp2" data-role="button" data-transition="pop" data-theme="c" data-rel="dialog" class="ui-disabled" id="dd">Weitergeben</a></p>
+            <input id="eingebZahl" type="text">
+            <p><a href="#wuerfel" data-role="button" data-transition="pop" data-theme="b" data-rel="dialog" onclick="wuerfeln()">Würfeln!</a></p>
+            <p><a href="#sp2" data-role="button" data-transition="pop" data-theme="c" data-rel="dialog" id="dd">Weitergeben</a></p>
 
 
         </div>
         <!-- /content -->
 
-        <div data-role="footer ">
+        <div data-role="footer">
             <h4>&copy; Macsi - 2015</h4>
             <!---->
         </div>
         <!-- /footer -->
     </div>
-    <div data-role="page " id="wuerfel " align="center " data-theme="a ">
+    <div data-role="page" id="wuerfel" align="center" data-theme="a">
 
-        <div data-role="header ">
+        <div data-role="header">
             <h1>Maexchen</h1>
         </div>
         <!-- /header -->
-        <div data-role="content ">
+        <div data-role="content">
             <h2>Deine gewürfelte Zahl:</h2>
             <p id="gewuerfelteZahl"></p>
-            <p><a href="#sp1 " data-rel="back " data-role="button " data-inline="true " data-icon="back ">Zudecken</a></p>
+            <p><a href="#sp1" data-rel="back" data-role="button" data-inline="true" data-icon="back">Zudecken</a></p>
 
         </div>
-        <div data-role="footer ">
+        <div data-role="footer">
             <h4>&copy; Macsi - 2015</h4>
             <!---->
         </div>
     </div>
 
 
-    <div data-role="page " id="sp2 " data-theme="a " align="center ">
+    <div data-role="page" id="sp2" data-theme="a" align="center">
         <div class="wrapper">
-            <div class="top" style="text-align: center; font-size:4em; color:white;"><br><br>Lüge</div>
-            <div class="bottom" style="text-align: center; font-size:4em;"><br><br>Wahrheit</div>
+            <div class="top" style="text-align: center; font-size:4em; color:white;">
+                <br>
+                <br>Lüge
+            </div>
+            <div class="bottom" style="text-align: center; font-size:4em;">
+                <br>
+                <br>Wahrheit
+            </div>
         </div>
 
-        <!--<div data-role="content ">
+        <!--<div data-role="content">
             <!--        Wahrheit-->
-            <!--<div id="oben ">
-                <p><a href="#wahrheit " data-role="button " data-transition="pop " data-theme="b " data-rel="dialog ">Wahrheit</a></p>
+        <!--<div id="oben">
+                <p><a href="#wahrheit" data-role="button" data-transition="pop" data-theme="b" data-rel="dialog">Wahrheit</a></p>
             </div>
             <!--        Lüge -->
-            <!--<div id="unten ">
-                <p><a href="#luege " data-role="button " data-transition="pop " data-theme="c " data-rel="dialog ">Lüge</a></p>
+        <!--<div id="unten">
+                <p><a href="#luege" data-role="button" data-transition="pop" data-theme="c" data-rel="dialog">Lüge</a></p>
             </div>
         </div>
-        <div data-role="footer ">
+        <div data-role="footer">
             <h4>&copy; Macsi - 2015</h4>
             <!---->
         <!--</div>

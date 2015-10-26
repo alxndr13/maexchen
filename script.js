@@ -8,14 +8,6 @@ function wuerfeln() {
     document.getElementById("gewuerfelteZahl").innerHTML = gewZahl;
 }
 
-function checkIfZahlEingegeben() {
-    if (document.getElementById("eingebZahl") != "") {
-
-        document.getElementById("dd").removeAttribute("class");
-    }
-
-}
-
 function wahrheit() {
 
 }
