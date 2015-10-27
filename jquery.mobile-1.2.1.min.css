@@ -532,7 +532,7 @@
     background-image: -moz-linear-gradient( #fff, #fff);
     background-image: -ms-linear-gradient( #fff, #fff);
     background-image: -o-linear-gradient( #fff, #fff);
-    background-image: linear-gradient( #fff, #fff)
+    background-image: linear-gradient( #fff, #fff);
 }
 
 .ui-overlay-d {
