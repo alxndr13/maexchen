@@ -6,7 +6,7 @@ var pktplayer1,
     playerarray = new Array(),
     anzahlSpieler = 0,
     playercount = 0,
-    zahlen = Array(11, 21, 22, 31, 32, 33, 41, 42, 43, 44, 51, 52, 53, 54, 55, 61, 62, 63, 64, 65, 66),
+    zahlen = Array(31, 32, 41, 42, 43, 51, 52, 53, 54, 61, 62, 63, 64, 65, 11, 22, 33, 44, 55, 66, 21),
     gewZahl,
     eingebZahl,
     letzteEingebZahl,
@@ -47,33 +47,40 @@ function loadCurrentPlayer() {
 function saveEingebZahl() {
 
     eingebZahl = document.getElementById("eingebZahl").value;
+    if (mussUeber === true) {
+        if (zahlen.indexOf(eingebZahl) < zahlen.indexOf(letzteEingebZahl)) {
+            alert("Deine Zahl muss höher als die letzte sein!");
+            location.href = "#sp1";
+
+        } else {
+            location.href = "#sp2";
+            letzteEingebZahl = eingebZahl;
+        }
+    } else {
+        location.href = "#sp2";
+        letzteEingebZahl = eingebZahl;
+    }
 }
 
 
 function wahrheit() {
 
-    if (mussUeber == true) {
-        if (eingebZahl > letzteEingebZahl) {
-            location.href = "#sp1";
-            loadCurrentPlayer();
-            letzteEingebZahl = eingebZahl;
-        } else {
-            alert("Deine Zahl muss höher als die letzte sein!");
-            location.href = "#sp1";
-        }
-    } else {
-        loadCurrentPlayer();
-        location.href = "#sp1";
-    }
+    loadCurrentPlayer();
+    mussUeber = true;
+    location.href = "#sp1";
 
 }
 
 function luege() {
 
-    if (eingebZahl > gewZahl) {
+    if (zahlen.indexOf(eingebZahl) > zahlen.indexOf(gewZahl)) {
+        document.getElementById("richtigausgabe").innerHTML = "Alles richtig gemacht, " + playerarray[playercount];
         location.href = "#istluege";
+        mussUeber = false;
     } else {
-        location.href = "#keineluege"
+        document.getElementById("falschausgabe").innerHTML = "Alles falsch gemacht, " + playerarray[playercount];
+        location.href = "#keineluege";
+        mussUeber = false;
     }
 
 }

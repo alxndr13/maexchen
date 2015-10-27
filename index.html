@@ -133,11 +133,11 @@
         <!-- /header -->
         <div data-role="content">
             <h1 id="spheader">Spieler, du bist am Zug.</h1>
-            <img src="arschficker.gif" height=200 width=200/>
+            <img src="w_oub.png" height=200 width=200/>
             <p>Deine "gewürfelte" Zahl:</p>
             <input id="eingebZahl" type="text">
             <p><a href="#wuerfel" data-role="button" data-transition="pop" data-theme="b" data-rel="dialog" onclick="wuerfeln()">Würfeln!</a></p>
-            <p><a href="#sp2" data-role="button" data-transition="pop" data-theme="c" data-rel="dialog" id="dd" onclick="saveEingebZahl();">Weitergeben</a></p>
+            <p><a data-role="button" data-transition="pop" data-theme="c" data-rel="dialog" id="dd" onclick="saveEingebZahl();">Weitergeben</a></p>
 
 
         </div>
@@ -188,7 +188,7 @@
                 <br>Richtig :-)
             </div>
             <div data-role="content">
-                <p style="text-align: center; font-size: 2em;">Alles richtig gemacht Brudi!</p>
+                <p id="richtigausgabe" style="text-align: center; font-size: 2em;"></p>
                 <p><a href="#sp1" data-role="button" data-transition="pop" data-theme="b" onclick="loadCurrentPlayer();">Weiter!</a></p>
             </div>
 
@@ -202,7 +202,7 @@
                 <br>Falsch :-(
             </div>
             <div data-role="content">
-                <p style="text-align: center; font-size: 2em;">Alles falsch gemacht Brudi!</p>
+                <p id="falschausgabe" style="text-align: center; font-size: 2em;"></p>
                 <p><a href="#sp1" data-role="button" data-transition="pop" data-theme="b" onclick="loadCurrentPlayer();">Weiter!</a></p>
             </div>
 
