@@ -52,8 +52,9 @@
         <!-- /header -->
 
         <div data-role="content" data-theme="c" align="center">
-
+            <div data-role="content" data-theme="e" align="center">
             <h2>Modus auswählen:</h2>
+            </div>
             <p>Wählt euren Modus! Seid ihr hart genug um es mit dem Captain aufzunehmen?</p>
             <p align="center">
                 <label for="modusauswahl" class="select" align="center">Schwierigkeit: </label>
@@ -127,11 +128,14 @@
     <div data-role="page" id="four" align="center" data-theme="c">
 
         <div data-role="header" data-theme="c">
+            
             <h1>Mitspieler</h1>
         </div>
         <!-- /header -->
         <div data-role="content">
+            <div data-role="content" data-theme="e" align="center">
             <h2>Spieler</h2>
+            </div>
             <p>Trage die Spieler ein, die an Mäxchen teilnehmen:</p>
             <form>
                 <input type="text" id="player1"></input>
@@ -163,8 +167,8 @@
             <img src="w_oub.png" height=200 width=200 onclick="wuerfeln();"/>
             <p>Deine "gewürfelte" Zahl:</p>
             <input id="eingebZahl" type="text">
-            <p><a href="#wuerfel" data-role="button" data-transition="pop" data-theme="c" data-rel="dialog" onclick="wuerfeln()">Würfeln!</a></p>
-            <p><a data-role="button" data-transition="pop" data-theme="c" data-rel="dialog" id="dd" onclick="saveEingebZahl();">Weitergeben</a></p>
+
+            <p><a data-role="button" data-transition="pop" data-theme="b" data-rel="dialog" id="dd" onclick="saveEingebZahl();">Weitergeben</a></p>
         </div>
         <!-- /content -->
 
