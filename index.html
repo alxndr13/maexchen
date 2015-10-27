@@ -16,20 +16,20 @@
 <body>
 
     <!-- Start of first page: #one -->
-    <div data-role="page" id="one" data-theme="a">
+    <div data-role="page" id="one" data-theme="b">
 
-        <div data-role="header" data-theme="a">
+        <div data-role="header" data-theme="b">
             <h1>Maexchen</h1>
         </div>
         <!-- /header -->
 
-        <div data-role="content" align="center" data-theme="a">
+        <div data-role="content" align="center" data-theme="b">
             <h2>Willkommen!</h2>
             <p>Herzlich Willkommen zum Fallstudien Projekt der Gruppe Macsi des Kurses WWI14AMB. Diese Anwendung wurde mithilfe jQuery Mobile realisiert.</p>
-            <p><img src="Smirnoff-Vodka.gif" width="300" height="300" /></p>
+            <p><img src="Smirnoff-Vodka.gif" width="100px" height="100px" /></p>
             <h3>Get started:</h3>
             <p><a href="#two" data-role="button" data-theme="e">Start</a></p>
-            <p><a href="#regeln" data-role="button" data-rel="dialog" data-transition="pop">Regeln</a></p>
+            <p><a href="#regeln" data-theme="a" data-role="button" data-rel="dialog" data-transition="pop">Regeln</a></p>
         </div>
         <!-- /content -->
 
@@ -42,26 +42,26 @@
 
 
     <!-- Start of second page: #two -->
-    <div data-role="page" id="two" data-theme="a">
+    <div data-role="page" id="two" data-theme="b">
 
-        <div data-role="header" data-theme="a">
+        <div data-role="header" data-theme="b">
             <h1>Modusauswahl</h1>
         </div>
         <!-- /header -->
 
-        <div data-role="content" data-theme="a" align="center">
+        <div data-role="content" data-theme="b" align="center">
             <h2>Modus auswählen:</h2>
             <p>Wählt euren Modus! Seid ihr hart genug um es mit dem Captain aufzunehmen?</p>
             <p align="center">
                 <label for="modusauswahl" class="select" align="center">Schwierigkeit: </label>
             </p>
-            <select name="select-choice-1" id="difficulty">
+            <select name="select-choice-1" id="difficulty" data-theme="a">
                 <option value="leicht">leicht</option>
                 <option value="hart">hart</option>
             </select>
 
-            <p><a href="#four" data-role="button" data-transition="pop" data-theme="b" onclick="saveDiff();">Mitspieler eintragen</a></p>
-            <p><a href="#one" data-direction="reverse" data-role="button">Zurück</a></p>
+            <p><a href="#four" data-role="button" data-transition="pop" data-theme="e" onclick="saveDiff();">Mitspieler eintragen</a></p>
+            <p><a href="#one" data-direction="reverse" data-role="button" data-theme="a">Zurück</a></p>
 
         </div>
         <!-- /content -->
@@ -85,23 +85,31 @@
             <h2>Reihenfolge:</h2>
             <p>
                 Der höchste Wert ist das "Mäxchen", das ist eine Zwei und eine Eins (21).
-            <ul>
-                <li>Anschließend folgen in absteigender Reihenfolge alle Doppelwerte, also 66, 55, 44, 33, 22 und 11. Diese werden "Pasch" genannt, also etwa "Einser-Pasch".</li><p>
-                <li>Danach folgen die übrigen Werte, wobei der höhere Wert immer voran gestellt wird.</li><p>
-                <li>In absteigender Reihenfolge also: 65, 64, 63, 62, 61, 54, 53, 52, 51, 43, 42, 41, 32, 31.</li><p>
-            </ul>
-            <p>
-                Die Gesamtliste lautet also (jetzt in aufsteigender Reihenfolge):<p>
-            <ul>
-                <li>31, 32, 41, 42, 43, 51, 52, 53, 54, 61, 62, 63, 64, 65, 11, 22, 33, 44, 55, 66, 21</li><p>
-            </ul>
-            <p>
-            <h2>Regeln:</h2><p>
-            Der Spieler Eins beginnt und würfelt mit den abgebildeten Würfeln. Den jeweiligen Wert - oder einen beliebigen anderen nennt er, verdeckt das Ergebnis und gibt das Device an den nächsten Spieler weiter. Dieser hat nun die Möglichkeit, dem ersten Spieler dessen Wurf zu glauben oder auch nicht. Glaubt er ihn nicht, wird das Ergebnis aufgedeckt - der Spieler, der im Unrecht war, erhält einen "Strafpunkt". Alternativ kann der zweite Spieler den ersten Wurf auch glauben und selber weiter würfeln. Er muss dabei aber mehr als sein Vormann würfeln (siehe oben unter Reihenfolge). Schafft er das nicht, muss er lügen. Anschließend ist der dritte Spieler am Zug, der dem zweiten Spieler dessen Wurf wieder glauben kann oder nicht.<p>
-Wird ein Wurf angezweifelt und das Ergebnis aufgedeckt, beginnt der im Unrecht gelegene Spieler mit einer neuen Runde, kann also wieder frei einen Wert vorgeben.<p>
-Hat ein Spieler ein Mäxchen angesagt, so kann der nachfolgende Spieler nicht mehr weiter überbieten. In diesem Fall braucht der nächste Spieler den Wurf "nur" einzustellen, also ebenfalls ein Mäxchen zu würfeln. Wird ein Mäxchen angezweifelt, so hält der im Unrecht liegende Spieler zwei "Strafpunkte".
-            </p>
-            <p><a href="#one" data-rel="back" data-role="button" data-inline="true" data-icon="back">Zurück</a></p>
+                <ul>
+                    <li>Anschließend folgen in absteigender Reihenfolge alle Doppelwerte, also 66, 55, 44, 33, 22 und 11. Diese werden "Pasch" genannt, also etwa "Einser-Pasch".</li>
+                    <p>
+                        <li>Danach folgen die übrigen Werte, wobei der höhere Wert immer voran gestellt wird.</li>
+                        <p>
+                            <li>In absteigender Reihenfolge also: 65, 64, 63, 62, 61, 54, 53, 52, 51, 43, 42, 41, 32, 31.</li>
+                            <p>
+                </ul>
+                <p>
+                    Die Gesamtliste lautet also (jetzt in aufsteigender Reihenfolge):
+                    <p>
+                        <ul>
+                            <li>31, 32, 41, 42, 43, 51, 52, 53, 54, 61, 62, 63, 64, 65, 11, 22, 33, 44, 55, 66, 21</li>
+                            <p>
+                        </ul>
+                        <p>
+                            <h2>Regeln:</h2>
+                            <p>
+                                Der Spieler Eins beginnt und würfelt mit den abgebildeten Würfeln. Den jeweiligen Wert - oder einen beliebigen anderen nennt er, verdeckt das Ergebnis und gibt das Device an den nächsten Spieler weiter. Dieser hat nun die Möglichkeit, dem ersten Spieler dessen Wurf zu glauben oder auch nicht. Glaubt er ihn nicht, wird das Ergebnis aufgedeckt - der Spieler, der im Unrecht war, erhält einen "Strafpunkt". Alternativ kann der zweite Spieler den ersten Wurf auch glauben und selber weiter würfeln. Er muss dabei aber mehr als sein Vormann würfeln (siehe oben unter Reihenfolge). Schafft er das nicht, muss er lügen. Anschließend ist der dritte Spieler am Zug, der dem zweiten Spieler dessen Wurf wieder glauben kann oder nicht.
+                                <p>
+                                    Wird ein Wurf angezweifelt und das Ergebnis aufgedeckt, beginnt der im Unrecht gelegene Spieler mit einer neuen Runde, kann also wieder frei einen Wert vorgeben.
+                                    <p>
+                                        Hat ein Spieler ein Mäxchen angesagt, so kann der nachfolgende Spieler nicht mehr weiter überbieten. In diesem Fall braucht der nächste Spieler den Wurf "nur" einzustellen, also ebenfalls ein Mäxchen zu würfeln. Wird ein Mäxchen angezweifelt, so hält der im Unrecht liegende Spieler zwei "Strafpunkte".
+                                    </p>
+                                    <p><a href="#one" data-rel="back" data-role="button" data-inline="true" data-icon="back">Zurück</a></p>
         </div>
         <!-- /content -->
 
@@ -113,7 +121,7 @@ Hat ein Spieler ein Mäxchen angesagt, so kann der nachfolgende Spieler nicht me
     <!-- /page regeln -->
 
     <!-- Start der vierten Seite -->
-    <div data-role="page" id="four" align="center" data-theme="a">
+    <div data-role="page" id="four" align="center" data-theme="b">
 
         <div data-role="header">
             <h1>Mitspieler</h1>
@@ -130,8 +138,8 @@ Hat ein Spieler ein Mäxchen angesagt, so kann der nachfolgende Spieler nicht me
                 <input type="text" id="player5"></input>
             </form>
 
-            <p><a href="#sp1" data-role="button" data-transition="pop" data-theme="b" onclick="savePlayers(); loadCurrentPlayer();">Spiel starten!</a></p>
-            <p><a href="#two" data-direction="reverse" data-role="button">Zurück</a></p>
+            <p><a href="#sp1" data-role="button" data-transition="pop" data-theme="e" onclick="savePlayers(); loadCurrentPlayer();">Spiel starten!</a></p>
+            <p><a href="#two" data-direction="reverse" data-role="button" data-theme="a">Zurück</a></p>
 
         </div>
         <!-- /content -->
@@ -142,7 +150,7 @@ Hat ein Spieler ein Mäxchen angesagt, so kann der nachfolgende Spieler nicht me
         </div>
         <!-- /footer -->
     </div>
-    <div data-role="page" id="sp1" align="center" data-theme="a">
+    <div data-role="page" id="sp1" align="center" data-theme="b">
 
         <div data-role="header">
             <h1>Maexchen</h1>
@@ -153,8 +161,8 @@ Hat ein Spieler ein Mäxchen angesagt, so kann der nachfolgende Spieler nicht me
             <img src="w_oub.png" height=200 width=200/>
             <p>Deine "gewürfelte" Zahl:</p>
             <input id="eingebZahl" type="text">
-            <p><a href="#wuerfel" data-role="button" data-transition="pop" data-theme="b" data-rel="dialog" onclick="wuerfeln()">Würfeln!</a></p>
-            <p><a data-role="button" data-transition="pop" data-theme="c" data-rel="dialog" id="dd" onclick="saveEingebZahl();">Weitergeben</a></p>
+            <p><a data-role="button" data-transition="pop" data-theme="e" data-rel="dialog" onclick="wuerfeln()">Würfeln!</a></p>
+            <p><a data-role="button" data-transition="pop" data-theme="a" data-rel="dialog" id="dd" onclick="saveEingebZahl();">Weitergeben</a></p>
 
 
         </div>
@@ -166,7 +174,7 @@ Hat ein Spieler ein Mäxchen angesagt, so kann der nachfolgende Spieler nicht me
         </div>
         <!-- /footer -->
     </div>
-    <div data-role="page" id="wuerfel" align="center" data-theme="a">
+    <div data-role="page" id="wuerfel" align="center" data-theme="b">
 
         <div data-role="header">
             <h1>Maexchen</h1>
@@ -175,7 +183,7 @@ Hat ein Spieler ein Mäxchen angesagt, so kann der nachfolgende Spieler nicht me
         <div data-role="content">
             <h2>Deine gewürfelte Zahl:</h2>
             <p id="gewuerfelteZahl"></p>
-            <p><a href="#sp1" data-rel="back" data-role="button" data-inline="true" data-icon="back">Zudecken</a></p>
+            <p><a href="#sp1" data-rel="back" data-role="button" data-theme="a" data-inline="true" data-icon="back">Zudecken</a></p>
 
         </div>
         <div data-role="footer">
@@ -185,7 +193,7 @@ Hat ein Spieler ein Mäxchen angesagt, so kann der nachfolgende Spieler nicht me
     </div>
 
 
-    <div data-role="page" id="sp2" data-theme="a" align="center">
+    <div data-role="page" id="sp2" data-theme="b" align="center">
         <div class="wrapper">
             <div class="top" style="text-align: center; font-size:4em; color:white;" style="cursor: pointer;" onclick="wahrheit();">
                 <br>
@@ -198,7 +206,7 @@ Hat ein Spieler ein Mäxchen angesagt, so kann der nachfolgende Spieler nicht me
         </div>
     </div>
 
-    <div data-role="page" id="istluege" data-theme="a">
+    <div data-role="page" id="istluege" data-theme="b">
         <div class="wrapper">
             <div class="top" style="text-align: center; background-color: green; font-size:4em; color:white;" style="cursor: pointer;">
                 <br>
@@ -206,13 +214,13 @@ Hat ein Spieler ein Mäxchen angesagt, so kann der nachfolgende Spieler nicht me
             </div>
             <div data-role="content">
                 <p id="richtigausgabe" style="text-align: center; font-size: 2em;"></p>
-                <p><a href="#sp1" data-role="button" data-transition="pop" data-theme="b" onclick="loadCurrentPlayer();">Weiter!</a></p>
+                <p><a href="#sp1" data-role="button" data-transition="pop" data-theme="a" onclick="loadCurrentPlayer();">Weiter!</a></p>
             </div>
 
 
         </div>
     </div>
-    <div data-role="page" id="keineluege" data-theme="a">
+    <div data-role="page" id="keineluege" data-theme="b">
         <div class="wrapper">
             <div class="top" style="text-align: center; background-color: red; font-size:4em; color:white;" style="cursor: pointer;">
                 <br>
@@ -220,7 +228,7 @@ Hat ein Spieler ein Mäxchen angesagt, so kann der nachfolgende Spieler nicht me
             </div>
             <div data-role="content">
                 <p id="falschausgabe" style="text-align: center; font-size: 2em;"></p>
-                <p><a href="#sp1" data-role="button" data-transition="pop" data-theme="b" onclick="loadCurrentPlayer();">Weiter!</a></p>
+                <p><a href="#sp1" data-role="button" data-transition="pop" data-theme="a" onclick="loadCurrentPlayer();">Weiter!</a></p>
             </div>
 
 
