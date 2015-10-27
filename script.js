@@ -1,5 +1,8 @@
-var player1,
-    player2,
+var pktplayer1,
+    pktplayer2,
+    pktplayer3,
+    pktplayer4,
+    pktplayer5,
     playerarray = new Array(),
     anzahlSpieler = 0,
     playercount = 0,
@@ -7,6 +10,7 @@ var player1,
     gewZahl,
     eingebZahl,
     letzteEingebZahl,
+    mussUeber = false,
     difficulty;
 
 function wuerfeln() {
@@ -25,7 +29,8 @@ function savePlayers() {
             anzahlSpieler++;
         }
     }
-    alert("Anzahl Spieler: " + anzahlSpieler + " Array: " + playerarray.length);
+    alert("Anzahl Spieler: " + anzahlSpieler + " Arraygröße: " + playerarray.length);
+
 }
 
 function loadCurrentPlayer() {
@@ -36,22 +41,35 @@ function loadCurrentPlayer() {
         playercount++;
 
     }
+    document.getElementById("eingebZahl").value = "";
 }
 
 function saveEingebZahl() {
+
     eingebZahl = document.getElementById("eingebZahl").value;
 }
 
 
 function wahrheit() {
-    alert("wahrheit");
-    loadCurrentPlayer();
-    letzteEingebZahl = eingebZahl;
-    location.href = "#sp1";
+
+    if (mussUeber == true) {
+        if (eingebZahl > letzteEingebZahl) {
+            location.href = "#sp1";
+            loadCurrentPlayer();
+            letzteEingebZahl = eingebZahl;
+        } else {
+            alert("Deine Zahl muss höher als die letzte sein!");
+            location.href = "#sp1";
+        }
+    } else {
+        loadCurrentPlayer();
+        location.href = "#sp1";
+    }
+
 }
 
 function luege() {
-    alert("luege");
+
     if (eingebZahl > gewZahl) {
         location.href = "#istluege";
     } else {
