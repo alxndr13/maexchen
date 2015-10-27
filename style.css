@@ -21,3 +21,8 @@ div.bottom {
     position: relative;
     font-family: Helvetica, Arial, sans-serif;
 }
+
+#closing {
+    position: sticky;
+    float: left;
+}
