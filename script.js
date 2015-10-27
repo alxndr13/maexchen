@@ -18,7 +18,11 @@ function wuerfeln() {
     if (wurdeGewurfelt == false) {
         gewZahl = zahlen[Math.floor(Math.random() * zahlen.length)];
         document.getElementById("gewuerfelteZahl").innerHTML = gewZahl;
-        location.href = "#wuerfel"
+        // location.href = "#wuerfel"
+        $.mobile.changePage('#wuerfel', {
+            transition: 'pop',
+            role: 'dialog',
+        });
     } else {
         alert("Du hast bereits gewürfelt!\nDeine gewürfelte Zahl: " + gewZahl);
     }
