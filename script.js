@@ -1,9 +1,4 @@
-var pktplayer1,
-    pktplayer2,
-    pktplayer3,
-    pktplayer4,
-    pktplayer5,
-    playerarray = new Array(),
+var playerarray = new Array(),
     anzahlSpieler = 0,
     playercount = 0,
     zahlen = ["31", "32", "41", "42", "43", "51", "52", "53", "54", "61", "62", "63", "64", "65", "11", "22", "33", "44", "55", "66", "21"],
@@ -12,13 +7,13 @@ var pktplayer1,
     letzteEingebZahl,
     wurdeGewurfelt = false,
     mussUeber = false,
+    schnellesSpiel = false,
     difficulty;
 
 function wuerfeln() {
     if (wurdeGewurfelt == false) {
         gewZahl = zahlen[Math.floor(Math.random() * zahlen.length)];
         document.getElementById("gewuerfelteZahl").innerHTML = gewZahl;
-        // location.href = "#wuerfel"
         $.mobile.changePage('#wuerfel', {
             transition: 'pop',
             role: 'dialog',
@@ -29,6 +24,10 @@ function wuerfeln() {
     wurdeGewurfelt = true;
 
 
+}
+
+function fastGame() {
+    schnellesSpiel = true;
 }
 
 function saveDiff() {
@@ -42,12 +41,16 @@ function savePlayers() {
             anzahlSpieler++;
         }
     }
-    alert("Anzahl Spieler: " + anzahlSpieler + " Arraygröße: " + playerarray.length);
-
 }
 
 function loadCurrentPlayer() {
-    document.getElementById("spheader").innerHTML = playerarray[playercount] + ", du bist am Zug!";
+    if (schnellesSpiel == true) {
+        document.getElementById("spheader").innerHTML = "Spieler, du bist am Zug!";
+
+    } else {
+        document.getElementById("spheader").innerHTML = playerarray[playercount] + ", du bist am Zug!";
+
+    }
     if (playercount == playerarray.length - 1) {
         playercount = 0;
     } else {
@@ -78,26 +81,52 @@ function saveEingebZahl() {
 
 function wahrheit() {
 
-    letzteEingebZahl = eingebZahl;
-    loadCurrentPlayer();
-    mussUeber = true;
-    location.href = "#sp1";
-    wurdeGewurfelt = false;
+    if (schnellesSpiel == true) {
+        letzteEingebZahl = eingebZahl;
+        mussUeber = true;
+        location.href = "#sp1";
+        wurdeGewurfelt = false;
+        document.getElementById("eingebZahl").value = "";
+
+    } else {
+        letzteEingebZahl = eingebZahl;
+        loadCurrentPlayer();
+        mussUeber = true;
+        location.href = "#sp1";
+        wurdeGewurfelt = false;
+
+    }
+
 
 }
 
 function luege() {
-
-    if (zahlen.indexOf(eingebZahl) > zahlen.indexOf(gewZahl)) {
-        document.getElementById("richtigausgabe").innerHTML = "Alles richtig gemacht, " + playerarray[playercount];
-        location.href = "#istluege";
-        mussUeber = false;
-        wurdeGewurfelt = false;
+    if (schnellesSpiel == true) {
+        if (zahlen.indexOf(eingebZahl) > zahlen.indexOf(gewZahl)) {
+            document.getElementById("richtigausgabe").innerHTML = "Alles richtig gemacht, Spieler!";
+            location.href = "#istluege";
+            mussUeber = false;
+            wurdeGewurfelt = false;
+        } else {
+            document.getElementById("falschausgabe").innerHTML = "Alles falsch gemacht, Spieler";
+            location.href = "#keineluege";
+            mussUeber = false;
+            wurdeGewurfelt = false;
+        }
     } else {
-        document.getElementById("falschausgabe").innerHTML = "Alles falsch gemacht, " + playerarray[playercount];
-        location.href = "#keineluege";
-        mussUeber = false;
-        wurdeGewurfelt = false;
+        if (zahlen.indexOf(eingebZahl) > zahlen.indexOf(gewZahl)) {
+            document.getElementById("richtigausgabe").innerHTML = "Alles richtig gemacht, " + playerarray[playercount];
+            location.href = "#istluege";
+            mussUeber = false;
+            wurdeGewurfelt = false;
+        } else {
+            document.getElementById("falschausgabe").innerHTML = "Alles falsch gemacht, " + playerarray[playercount];
+            location.href = "#keineluege";
+            mussUeber = false;
+            wurdeGewurfelt = false;
+        }
     }
+
+
 
 }

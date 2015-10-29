@@ -39,9 +39,9 @@
         <!-- /footer -->
     </div>
     <!-- /page one -->
-    
+
     <!-- Start of first page: #choice -->
-      <div data-role="page" id="choice" data-theme="c">
+    <div data-role="page" id="choice" data-theme="c">
 
         <div data-role="header" data-theme="c">
         </div>
@@ -51,7 +51,7 @@
             <h1>Spielwahl</h1>
             </br>
             </br>
-            <p><a href="#sp1" data-role="button" data-theme="c" data-transition="pop">Schnelles Spiel</a></p>
+            <p><a href="#sp1" data-role="button" data-theme="c" data-transition="pop" onclick="fastGame();">Schnelles Spiel</a></p>
             <p><a href="#two" data-role="button" data-theme="c" data-transition="pop">Normales Spiel</a></p>
 
         </div>
@@ -74,7 +74,7 @@
 
         <div data-role="content" data-theme="c" align="center">
             <div data-role="content" data-theme="e" align="center">
-            <h2>Modus auswählen:</h2>
+                <h2>Modus auswählen:</h2>
             </div>
             <p>Wählt euren Modus! Seid ihr hart genug um es mit dem Captain aufzunehmen?</p>
             <p align="center">
@@ -149,12 +149,12 @@
     <div data-role="page" id="four" align="center" data-theme="c">
 
         <div data-role="header" data-theme="c">
-            
+
         </div>
         <!-- /header -->
         <div data-role="content">
             <div data-role="content" data-theme="e" align="center">
-            <h2>Mitspieler</h2>
+                <h2>Mitspieler</h2>
             </div>
             <p>Trage die Spieler ein, die an Mäxchen teilnehmen:</p>
             <form>
@@ -183,7 +183,7 @@
         <!-- /header -->
         <div data-role="content">
             <h1 id="spheader">Spieler, du bist am Zug.</h1>
-            <img src="w_oub.png" height=200 width=200 onclick="wuerfeln();"/>
+            <img src="w_oub.png" height=200 width=200 onclick="wuerfeln();" />
             <p>Deine "gewürfelte" Zahl:</p>
             <input id="eingebZahl" type="text">
 
@@ -198,7 +198,7 @@
         </div>
         <!-- /footer -->
     </div>
-    <div data-role="page" id="wuerfel" align="center" data-theme="c">
+    <div data-role="page" id="wuerfel" align="center" data-theme="b">
 
         <div data-role="header" data-theme="a">
             <h1>Maexchen</h1>
